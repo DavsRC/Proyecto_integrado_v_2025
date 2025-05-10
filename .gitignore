@@ -35,11 +35,6 @@ pyvenv.cfg
 .DS_Store
 Thumbs.db
 
-# Archivos de datos
-static/data/
-*.csv
-*.json
-
 # Directorio de documentación generada
 docs/_build/
 
