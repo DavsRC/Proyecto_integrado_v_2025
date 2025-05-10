@@ -1,5 +1,48 @@
+# Directorios de entorno virtual Python
+venv/
+venv*/
+
+# Archivos de caché de Python
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*$py.class
+
+# Archivos de registro
 *.log
+logs/
+
+
+# Directorios de dependencias
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+
+# Archivos de entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Archivos de IDE
+.idea/
 .vscode/
+*.swp
+*.swo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de datos
+static/data/
+*.csv
+*.json
+
+# Directorio de documentación generada
+docs/_build/
+
+# Directorio de GitHub Actions
+.github/workflows/
+!github/workflows/update_data.yml  # Excepción para este archivo específico
