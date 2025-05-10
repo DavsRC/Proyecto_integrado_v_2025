@@ -6,7 +6,7 @@ Este proyecto implementa una solución automatizada para la recolección continu
 
 ## 📁 Estructura del Proyecto
 
-
+```
 Proyecto_integrado_v_2025/
 ├── .github/
 │   └── workflows/
@@ -23,7 +23,7 @@ Proyecto_integrado_v_2025/
 ├── requirements.txt                # Archivo de dependencias
 ├── setup.py                        # Configuración del paquete Python
 └── README.md                       # Este documento
-
+```
 
 ---
 
