@@ -1,10 +1,10 @@
-# 📈 Proyecto Integrado V - Recolección de Datos Históricos de TSLA (Tesla Inc.)
+#  Proyecto Integrado V - Recolección de Datos Históricos de TSLA (Tesla Inc.)
 
 Este proyecto implementa una solución automatizada para la recolección continua de datos históricos del indicador económico *TSLA* desde Yahoo Finanzas, utilizando técnicas de scraping web. La información obtenida se almacena en formatos *CSV* y *SQLite*, asegurando la trazabilidad mediante logs estructurados y automatización con GitHub Actions.
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 Proyecto_integrado_v_2025/
@@ -27,7 +27,7 @@ Proyecto_integrado_v_2025/
 
 ---
 
-## 🛠 Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - *Python 3.9.2*
 - requests: Descarga de contenido web
@@ -39,7 +39,7 @@ Proyecto_integrado_v_2025/
 
 ---
 
-## ▶ Ejecución Local
+##  Ejecución Local
 
 Sigue estos pasos para ejecutar el proyecto en tu máquina local:
 
@@ -61,13 +61,13 @@ python src/proyecto_integrado_V/main.py
 
 Al finalizar, se generarán automáticamente:
 
-- 📄 BTC_EUR_data.csv con los datos históricos (en static/data)
-- 📊 btc_eur_data.db con la base SQLite
-- 📋 Logs individuales en la carpeta logs/
+-  BTC_EUR_data.csv con los datos históricos (en static/data)
+-  btc_eur_data.db con la base SQLite
+-  Logs individuales en la carpeta logs/
 
 ---
 
-## 🤖 Automatización en GitHub Actions
+##  Automatización en GitHub Actions
 
 Cada vez que se hace push en la rama main, el archivo .github/workflows/update_data.yml activa el siguiente flujo:
 
@@ -91,7 +91,7 @@ Contiene resumen, introducción, metodología y análisis en formato *APA*.
 
 ---
 
-## 👩‍💻 Autores
+##  Autores
 
 *Davinson Stiven Rincon Campos*
 *Estefania Jimenez Tabares*  
