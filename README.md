@@ -79,7 +79,7 @@ Cada vez que se hace push en la rama main, el archivo .github/workflows/update_d
 
 ---
 
-## 📄 Documentación Técnica
+## Documentación Técnica
 
 El informe técnico del proyecto está disponible en:
 
@@ -100,6 +100,6 @@ Institución Universitaria Digital de Antioquia
 
 ---
 
-## 🗓 Última actualización
+## Última actualización
 
 Mayo de 2025
