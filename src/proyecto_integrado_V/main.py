@@ -42,7 +42,7 @@ def main():
 
         # Ejecutar enricher.py
         try:
-            subprocess.run(["python", os.path.join(base_path, "enricher.py")], check=True)
+            subprocess.run([os.path.join(base_path, "venv", "Scripts", "python.exe"), os.path.join(base_path, "enricher.py")], check=True)
             logger.info('Main', 'main', 'Ejecución de enricher.py completada')
         except Exception as e:
             logger.error('Main', 'main', f'Error al ejecutar enricher.py: {e}')
