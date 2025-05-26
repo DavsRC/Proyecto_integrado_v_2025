@@ -49,7 +49,7 @@ def enriquecer_datos():
 
     # Guardar archivo enriquecido
     df.to_csv(output_path, index=False)
-    print(f"✅ Datos enriquecidos guardados en: {output_path}")
+    print(f"Datos enriquecidos guardados en: {output_path}")
 
 if __name__ == "__main__":
     enriquecer_datos()
