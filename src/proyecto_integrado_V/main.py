@@ -4,6 +4,9 @@ import pandas as pd
 import os
 import sqlite3
 
+# Nuevas importaciones
+import subprocess
+
 def main():
     logger = Logger()
     logger.info('Main', 'main', 'Inicializar clase Logger')
@@ -37,7 +40,19 @@ def main():
         except Exception as e:
             logger.error('Main', 'main', f'Error al guardar en SQLite: {e}')
 
-        print(df.head())
+        # Ejecutar enricher.py
+        try:
+            subprocess.run(["python", os.path.join(base_path, "enricher.py")], check=True)
+            logger.info('Main', 'main', 'Ejecución de enricher.py completada')
+        except Exception as e:
+            logger.error('Main', 'main', f'Error al ejecutar enricher.py: {e}')
+
+        # Ejecutar modeller.py
+        try:
+            subprocess.run(["python", os.path.join(base_path, "modeller.py")], check=True)
+            logger.info('Main', 'main', 'Ejecución de modeller.py completada')
+        except Exception as e:
+            logger.error('Main', 'main', f'Error al ejecutar modeller.py: {e}')
 
 if __name__ == "__main__":
     main()
