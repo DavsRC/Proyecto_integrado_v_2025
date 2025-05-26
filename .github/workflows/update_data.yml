@@ -31,12 +31,18 @@ jobs:
       - name: Instalar dependencias
         run: ./venv/Scripts/pip install -r requirements.txt
 
-      - name: Ejecutar script principal
+      - name: Ejecutar recolección de datos
         run: ./venv/Scripts/python src/proyecto_integrado_V/main.py
+
+      - name: Ejecutar enriquecimiento de datos
+        run: ./venv/Scripts/python src/proyecto_integrado_V/enricher.py
+
+      - name: Entrenar y guardar modelo
+        run: ./venv/Scripts/python src/proyecto_integrado_V/modeller.py
 
       - name: Commit y push de cambios
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Actualización automática de datos TSLA"
+          commit_message: "Actualización automática de datos TSLA + modelo"
           commit_user_name: Davinson Rincon [GitHub Actions]
-          commit_user_email: davinson.rincon@est.iudigital.edu.co
+          commit_user_email: davinson.rincon@est.iudigital.edu.co 
