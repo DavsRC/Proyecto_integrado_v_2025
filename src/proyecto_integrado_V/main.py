@@ -49,7 +49,7 @@ def main():
 
         # Ejecutar modeller.py
         try:
-            subprocess.run(["python", os.path.join(base_path, "modeller.py")], check=True)
+            subprocess.run([os.path.join(base_path, "venv", "Scripts", "python.exe"), os.path.join(base_path, "modeller.py")], check=True)
             logger.info('Main', 'main', 'Ejecución de modeller.py completada')
         except Exception as e:
             logger.error('Main', 'main', f'Error al ejecutar modeller.py: {e}')
