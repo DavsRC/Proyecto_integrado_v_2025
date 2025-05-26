@@ -39,3 +39,14 @@ class Modelador:
         X = df[['media_movil_7', 'media_movil_30', 'volatilidad_7d']]
         predicciones = modelo.predict(X)
         return predicciones
+
+if __name__ == "__main__":
+    # Ruta al archivo enriquecido
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(base_path, 'static', 'data', 'TSLA_data_enriched.csv')
+
+    # Cargar el dataset enriquecido
+    df = pd.read_csv(data_path)
+
+    modelador = Modelador()
+    modelador.entrenar(df)
