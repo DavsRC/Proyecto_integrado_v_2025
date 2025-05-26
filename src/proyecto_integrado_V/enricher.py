@@ -49,20 +49,23 @@ def enriquecer_datos():
     df['volumen_promedio_semanal'] = df['volumen'].rolling(window=7).mean()
 
     # Guardar CSV enriquecido
+    if os.path.exists(output_path):
+        os.remove(output_path)
     df.to_csv(output_path, index=False)
-    print(f"Datos enriquecidos guardados en: {output_path}")
+    print(f"✅ Datos enriquecidos guardados en: {output_path}")
 
-    # Guardar archivo Excel con KPIs para Power BI (fecha como texto d/mm/yy)
+    # Guardar archivo Excel con KPIs para Power BI
     dashboard_path = os.path.join(base_path, 'static', 'data', 'TSLA_dashboard_data.xlsx')
     df_kpi = df[[
         'fecha', 'cierre_ajustado', 'media_movil_7', 'media_movil_30',
         'tasa_variacion', 'retorno_acumulado', 'volatilidad_7d', 'volumen_promedio_semanal'
     ]].copy()
 
-    df_kpi['fecha'] = df_kpi['fecha'].dt.strftime('%-d/%m/%y')  # Usa '%#d/%m/%y' en Windows si falla
+    # Formato legible tipo d/mm/yy para Power BI
+    df_kpi['fecha'] = df_kpi['fecha'].dt.strftime('%#d/%m/%y')  # Usa '%#d' para Windows, '%-d' para Linux/Mac
 
     df_kpi.to_excel(dashboard_path, index=False)
-    print(f"Archivo Excel para Power BI exportado en: {dashboard_path}")
+    print(f"📊 Archivo Excel para Power BI exportado en: {dashboard_path}")
 
 if __name__ == "__main__":
     enriquecer_datos()
