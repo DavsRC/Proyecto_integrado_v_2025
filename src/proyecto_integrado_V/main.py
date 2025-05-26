@@ -3,8 +3,6 @@ from collector import Collector
 import pandas as pd
 import os
 import sqlite3
-
-# Nuevas importaciones
 import subprocess
 
 def main():
@@ -23,8 +21,10 @@ def main():
         output_dir = os.path.join(base_path, 'static', 'data')
         os.makedirs(output_dir, exist_ok=True)
 
-        # CSV
+        # CSV: Reiniciar archivo si existe
         csv_path = os.path.join(output_dir, 'TSLA_data.csv')
+        if os.path.exists(csv_path):
+            os.remove(csv_path)
         df.to_csv(csv_path, index=False)
         logger.info('Main', 'main', f'Datos guardados en {csv_path}')
 
