@@ -52,12 +52,15 @@ def enriquecer_datos():
     df.to_csv(output_path, index=False)
     print(f"Datos enriquecidos guardados en: {output_path}")
 
-    # Guardar archivo Excel con KPIs para Power BI
+    # Guardar archivo Excel con KPIs para Power BI (fecha como texto d/mm/yy)
     dashboard_path = os.path.join(base_path, 'static', 'data', 'TSLA_dashboard_data.xlsx')
     df_kpi = df[[
         'fecha', 'cierre_ajustado', 'media_movil_7', 'media_movil_30',
         'tasa_variacion', 'retorno_acumulado', 'volatilidad_7d', 'volumen_promedio_semanal'
-    ]]
+    ]].copy()
+
+    df_kpi['fecha'] = df_kpi['fecha'].dt.strftime('%-d/%m/%y')  # Usa '%#d/%m/%y' en Windows si falla
+
     df_kpi.to_excel(dashboard_path, index=False)
     print(f"Archivo Excel para Power BI exportado en: {dashboard_path}")
 
